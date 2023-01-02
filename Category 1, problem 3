@@ -1,4 +1,4 @@
-  GNU nano 4.8                                                                     pb103.c                                                                                #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 void inverseaza(char s[101])
 {
