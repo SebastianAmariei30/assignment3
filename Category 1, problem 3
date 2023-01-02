@@ -1,0 +1,16 @@
+  GNU nano 4.8                                                                     pb103.c                                                                                #include <stdio.h>
+#include <string.h>
+void inverseaza(char s[101])
+{
+        char *p;
+        p=s;
+        for(int i=strlen(s)-1;i>=0;i--)
+                printf("%c",*(p+i));
+}
+int main()
+{
+        char s[101];
+        scanf("%s", s);
+        inverseaza(s);
+        return 0;
+}
