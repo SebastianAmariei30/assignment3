@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+int main()
+{
+typedef struct
+{
+        char nume[20];
+        int id,n1,n2,n3,n4,n5;
+        double m;
+}student;
+student *studenti=malloc(sizeof(student)*3);
+student aux;
+int i,j;
+for(i=0;i<3;i++)
+        {
+                scanf("%s",studenti[i].nume);
+                scanf("%d",&studenti[i].id);
+                scanf("%d",&studenti[i].n1);
+                scanf("%d",&studenti[i].n2);
+                scanf("%d",&studenti[i].n3);
+                scanf("%d",&studenti[i].n4);
+                scanf("%d",&studenti[i].n5);
+                int s=studenti[i].n1+studenti[i].n2+studenti[i].n3+studenti[i].n4+studenti[i].n5;
+                studenti[i].m=s/5.00;
+        }
+
+for (i=0;i<2;i++)
+        for(j=i+1;j<3;j++)
+                {if(studenti[i].m<studenti[j].m)
+                        {
+                                aux=studenti[i];
+                                studenti[i]=studenti[j];
+                                studenti[j]=aux;
+                        }
+                else
+                        if(fabs(studenti[i].m-studenti[j].m)<0.00001)
+                                if(strcmp(studenti[i].nume,studenti[j].nume)>0)
+                        {
+                                aux=studenti[i];
+                                studenti[i]=studenti[j];
+                                studenti[j]=aux;
+                        }
+}
+for(i=0;i<3;i++)
+        printf("%s %f\n",studenti[i].nume,studenti[i].m);
+return 0;
+}
